@@ -2,6 +2,6 @@
 draft: False
 title: College Projects
 description: My coding projects during my time at Baylor University. 
-date: 2024-09-10
+date: 2024-09-08
 url: https://github.com/brycemcwhirter/college-projects
 ---
