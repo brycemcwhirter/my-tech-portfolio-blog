@@ -1,0 +1,25 @@
+---
+import jobExperience from '../data/jobExperience';
+const H3 = "text-lg font-semibold";
+---
+
+<div>
+    {jobExperience.map(experience => (
+            <div class=" grid grid-cols-2">
+                <p class={H3}>{experience['job-title']}</p>
+                <p class={H3 + " text-right italic"}>{experience['company']}</p>
+                <p class="">{experience['from-date']} - {experience['to-date']}</p>
+            </div>
+
+        <div>
+            <ul>
+                <li>{experience['bullets'][0]}</li>
+                <li>{experience['bullets'][1]}</li>
+                <li>{experience['bullets'][2]}</li>
+            </ul>
+
+
+
+        </div>
+    ))}
+</div>

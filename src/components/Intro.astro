@@ -1,0 +1,50 @@
+---
+import HomeBlogTable from "../components/HomeBlogTable.astro"
+import MostRecentProjects from '../components/MostRecentProjects.astro'
+import JobExperience from '../components/JobExperience.astro'
+
+const H2 = "text-2xl font-semibold";
+const H3 = "text-xl font-semibold";
+---
+
+<section class="mb-10">
+  <div class="mb-8 space-y-4">
+    <img src="/profilePicture.png" alt="favicon" class="size-1/6"/>
+
+    <div>
+      <h1 class="text-4xl font-bold">Bryce McWhirter</h1>
+      <p><i>Full Stack Developer, DFW</i></p>
+    </div>
+
+    <div>
+      <h1 class={H2}>Projects</h1>
+      <MostRecentProjects />
+    </div>
+
+    <div>
+      <h1 class={H2}>Blog Posts</h1>
+      <HomeBlogTable />
+    </div>
+
+
+    <!--<div>-->
+    <!--  <h1 class={H2}>Tech Stack</h1>-->
+    <!--</div>-->
+
+    <div>
+      <h1 class={H2}>Professional Experience</h1>
+      <JobExperience />
+    </div>
+
+
+
+    <div>
+      <h1 class={H2}>Education</h1>
+      <p> B.S. in Computer Science w/ Minor in Entrepreneurship & Corporate Innovation</p>
+      <p><i>Baylor University, 2024</i></p>
+    </div>
+
+
+
+  </div>
+</section>
