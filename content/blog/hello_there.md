@@ -3,13 +3,14 @@ external: false
 draft: false
 title: A Small Update
 description: A Little Change to My Blog
-date: 2024-10-20
+date: 2024-10-17
 ---
 
 It's funny how things can change within the span of a month. 
 
-I've decided to move in a different direction in terms of showcasing myself on the internet. This website that you are currently on is a space dedicated to my technical side. Here, you can learn more about my experience as a software developer; the places I've worked, the projects I'm working on, helpful information that I've found useful, all things software development in my livelihood. 
+I've decided to move in a total different course in how I showcase myself as a software developer on the internet. Today, I'm relaunching brycemcwhirter.com and I'm officially launching techportfolio.brycemcwhirter.com. 
 
-My portfolio, brycemcwhirter.com, will be used as a space to showcase projects that I am maintaining such as this technical portfolio and other projects. This space will hold all projects that I've worked on and serve as a digital footprint of my technical experience. 
+My main website will serve as a landing page for sharing projects that I'm currently working on. 
 
-I think this is going to be a great change in the long run. Welcome to my tech portfolio and I'm glad you're here! 
+My tech portfolio will be utilized to share my experience as a software developer. I'll share my professional experience in the industry, new technologies that I'm experimenting with, and highlight developer projects that I've worked on. 
+
