@@ -41,9 +41,16 @@ const sortedProjects = projects
                   class="unset hover:text-text-link"
                 >
                   <span>{project.frontmatter.title}</span>
-                  <span>
-                    <i class="ml-1 mr-1 text-[12px] pb-2 fa-solid fa-up-right-from-square" />
+                </a>
+                <span>
+                      |
                   </span>
+                <a
+                href={project.frontmatter.github}
+                target="_blank"
+                class="unset hover:text-text-link"
+                >
+                  <i class="fa-brands fa-github"></i>
                 </a>
               </div>
               <div class="text-text-muted text-sm italic pt-1">
