@@ -1,0 +1,102 @@
+---
+import { readAll } from "../../lib/markdoc/read";
+import { project } from "../../lib/markdoc/frontmatter.schema";
+import PageLayout from "../../layouts/PageLayout.astro";
+import PageMeta from "../../components/PageMeta.astro";
+import { SITE_TITLE } from "../../config";
+import Tags from "../../components/Tags.astro";
+
+export function getStaticPaths() {
+    return [
+        {params: {language: 'javascript'}},
+        {params: {language: 'svelte'}},
+        {params: {language: 'tailwind'}},
+        {params: {language: 'react'}},
+        {params: {language: 'java'}},
+        {params: {language: 'python'}},
+        {params: {language: 'c'}},
+        {params: {language: 'c++'}},
+
+
+    ];
+}
+
+const { language } = Astro.params;
+
+const projects = await readAll({
+    directory: "projects",
+    frontmatterSchema: project,
+    });
+
+const sortedProjects = projects
+    .filter((p) => p.frontmatter.draft !== true)
+    .filter((p) => p.frontmatter.languages.includes(language)
+    )
+.sort(
+(a, b) =>
+new Date(b.frontmatter.date).valueOf() -
+new Date(a.frontmatter.date).valueOf()
+);
+
+
+
+---
+
+<PageLayout>
+    <PageMeta title={`Projects | ${SITE_TITLE}`} slot="meta" />
+    <section slot="main">
+
+        <span class="text-2xl font-semibold">Projects using {language}</span>
+        <ul>
+            {
+                sortedProjects.map((project) => {
+                    const formattedDate = new Date(
+                        project.frontmatter.date
+                    ).toLocaleDateString("en-us", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                    });
+                    return (
+                            <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
+                                <div class="title">
+                                    <a
+                                            href={project.frontmatter.url}
+                                            target="_blank"
+                                            class="unset hover:text-text-link"
+                                    >
+                                        <span>{project.frontmatter.title}</span>
+                                    </a>
+                                    <span>
+                      |
+                  </span>
+                                    <a
+                                            href={project.frontmatter.github}
+                                            target="_blank"
+                                            class="unset hover:text-text-link"
+                                    >
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    |
+                                    <span class="space-x-2">
+                  {
+                      project.frontmatter.languages.map((x) => {
+                          return(
+                                  <Tags language={x} />
+                          )
+                      })
+                  }
+                </span>
+                                </div>
+                                <div class="text-text-muted text-sm italic pt-1">
+                                    <time datetime={project.frontmatter.date.toISOString()}>
+                                        {formattedDate}
+                                    </time>
+                                </div>
+                            </li>
+                    );
+                })
+            }
+        </ul>
+    </section>
+</PageLayout>
