@@ -5,4 +5,5 @@ description: My web portfolio showcases a collection of my software development 
 date: 2024-09-10
 url: https://brycemcwhirter.com
 github: https://github.com/brycemcwhirter/landing-page
+languages: ["javascript", "svelte", "tailwind"]
 ---

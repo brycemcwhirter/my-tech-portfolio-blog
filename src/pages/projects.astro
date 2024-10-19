@@ -4,6 +4,7 @@ import { project } from "../lib/markdoc/frontmatter.schema";
 import PageLayout from "../layouts/PageLayout.astro";
 import PageMeta from "../components/PageMeta.astro";
 import { SITE_TITLE } from "../config";
+import Tags from "../components/Tags.astro";
 
 const projects = await readAll({
   directory: "projects",
@@ -17,6 +18,7 @@ const sortedProjects = projects
       new Date(b.frontmatter.date).valueOf() -
       new Date(a.frontmatter.date).valueOf()
   );
+
 ---
 
 <PageLayout>
@@ -52,6 +54,16 @@ const sortedProjects = projects
                 >
                   <i class="fa-brands fa-github"></i>
                 </a>
+                |
+                <span class="space-x-2">
+                  {
+                    project.frontmatter.languages.map((x) => {
+                      return(
+                          <Tags language={x} />
+                      )
+                    })
+                  }
+                </span>
               </div>
               <div class="text-text-muted text-sm italic pt-1">
                 <time datetime={project.frontmatter.date.toISOString()}>

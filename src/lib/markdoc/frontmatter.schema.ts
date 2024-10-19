@@ -45,4 +45,7 @@ export const blog = z.discriminatedUnion("external", [
 export const project = baseSchema.extend({
   url: z.string(),
   github: z.string(),
+  languages: z.string().array().nonempty({
+    message: "Include Languages Used In Project"
+  })
 });
