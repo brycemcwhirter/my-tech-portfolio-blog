@@ -5,5 +5,5 @@ description: My initial My Blog where I write about a plethora of topics. This b
 date: 2024-09-09
 url: https://darling-gumdrop-72492c.netlify.app
 github: https://github.com/brycemcwhirter/my-blog
-languages: ['javascript', 'python', 'c++', 'c']
+languages: ['javascript', 'react']
 ---

@@ -1,7 +1,9 @@
 ---
 const {language} = Astro.props
 ---
-
-<span class="space-x-5 decoration-sky-950 font-semibold border">
+<a
+href={"/projects/"+language}
+class="border font-semibold p-0.5"
+>
     {language}
-</span>
+</a>
