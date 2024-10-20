@@ -1,0 +1,14 @@
+---
+import Tags from "./Tags.astro";
+let languages = [
+    'javascript', 'svelte', 'tailwind',
+    'react', 'java', 'python',
+    'c', 'c++' ,'astro'
+];
+
+---
+<div class="space-x-3">
+    {languages.map((language) => {
+        return(<Tags language = {language} />)
+    })}
+</div>
