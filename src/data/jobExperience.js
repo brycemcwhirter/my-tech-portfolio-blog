@@ -1,13 +1,13 @@
 let JobExperience = [
     {
         "job-title": "Software Developer III",
-        "company": "Paycom, inc.",
+        "company": "Paycom Inc.",
         "from-date": "June 2023",
         "to-date": "Present",
         "bullets": [
-            "Designed and implemented Custom Converters, tailored solutions that generate reports aligned with diverse client requirements, enhancing data visualization and analysis capabilities.\n",
-            "Serve as technical advisor to clients, uncovering unique data requirements and optimal reporting structures, fostering effective communication and ensuring alignment with technical solutions.\n",
-            "Built a documentation portal for the Development Team to have adequate access to technical documentation related to building custom converters. "
+            "Developed and deployed Custom Converters for tailored client reports, enhancing data visualization and analysis. Offered technical consultation to clients, including senior administrators, by identifying data needs and optimizing reporting frameworks, while effectively managing multiple converters and consistently meeting deadlines.\n",
+            "Developed data services in PHP to query internal MySQL databases, efficiently retrieving and integrating client-related information into reporting solutions, improving data accessibility and accuracy for client-specific needs.\n",
+            "Developed a comprehensive documentation portal for the Development Team, providing streamlined access to technical documentation for building custom converters, resulting in a 68% time reduction in turnover time for converter development."
         ],
         "link": "https://www.paycom.com"
     },
