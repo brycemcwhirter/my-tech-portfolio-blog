@@ -2,6 +2,10 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
+import storyblok from '@storyblok/astro';
+import { loadEnv } from 'vite';
+
+
 
 /* 
   We are doing some URL mumbo jumbo here to tell Astro what the URL of your website will be.
@@ -17,7 +21,7 @@ const SERVER_PORT = 3000;
 // the url to access your blog during local development
 const LOCALHOST_URL = `http://localhost:${SERVER_PORT}`;
 // the url to access your blog after deploying it somewhere (Eg. Netlify)
-const LIVE_URL = "https://yourwebsiteurl.com";
+const LIVE_URL = "https://techportfolio.brycemcwhirter.com";
 // this is the astro command your npm script runs
 const SCRIPT = process.env.npm_lifecycle_script || "";
 const isBuild = SCRIPT.includes("astro build");
@@ -27,6 +31,8 @@ if (isBuild) {
   BASE_URL = LIVE_URL;
 }
 
+const env = loadEnv("", process.cwd(), 'STORYBLOK');
+
 export default defineConfig({
   server: { port: SERVER_PORT },
   site: BASE_URL,
@@ -34,6 +40,20 @@ export default defineConfig({
     sitemap(),
     tailwind({
       config: { applyBaseStyles: false },
-    }),
+    },
+    storyblok({
+      accessToken: env.STORYBLOK_TOKEN,
+      components: {
+        // Add your components here
+        blogPost: 'storyblok/BlogPost',
+        blogPostList: 'storyblok/BlogPostList',
+        page: 'storyblok/Page',
+      },
+      apiOptions: {
+        // Choose your Storyblok space region
+        region: 'us', // optional,  or 'eu' (default)
+      },
+    })),
   ],
 });
+
